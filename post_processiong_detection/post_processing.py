@@ -1,6 +1,8 @@
 import rospy
 import rospkg
-from tf.transformations import quaternion_matrix
+from geometry_msgs.msg import Point
+import tf2_ros as tf
+import tf2_geometry_msgs.tf2_geometry_msgs
 
 import numpy as np
 
@@ -12,9 +14,16 @@ import numpy as np
 # -> get world location of the robot from the SLAM
 # -> do a coordinate transformation to get the locations of
 
-def object_detections_to_world_frame():
-
-    pass
+def object_detections_to_world_frame(point1:Point):
+    """ Function that transforms the detected object location from the camera frame to the world frame.
+    
+    Args:
+        point1 (Point): Detected object location in the camera frame.
+    """
+    tfBuffer = tf.Buffer()
+    trans = tfBuffer.lookup_transform('rgb_camera_optical_link', 'world', rospy.Time())
+    point2 = tf2_geometry_msgs.do_transform_pose(point1, trans)
+    return point2
 
 
 def filter_real_detections(detected_objects:list, confidence_threshold:float, num_detections_threshold:int, object_radius:float):
@@ -65,8 +74,13 @@ def filter_real_detections(detected_objects:list, confidence_threshold:float, nu
 
     return confident_detected_objects[real_detection_indices]
 
+
+# def publish_low_confidence_detections(detected_objects:list, confidence_threshold:float):
             
     
+#     # Create a publisher if not provided
+#     if publisher is None:
+#         publisher = rospy.Publisher('/low_confidence_objects', Point, queue_size=10)
 
 
 
