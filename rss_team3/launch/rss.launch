@@ -1,0 +1,39 @@
+<launch>
+      <!-- Node 1: Main process -->
+      <include file="$(find smb)/launch/smb.launch" />
+
+      <!-- Node 2: Custom node!!! TBA -->
+      <!-- 
+      <node pkg=" !name! " type="roslaunch" name="delay_for_node2" args="$(arg delay_duration)">
+        <param name="delay_duration" value=" !value! "/> 
+      </node>
+      -->
+      
+      <!-- Node 3: SLAM -->
+      <include file="$(find smb_msf_graph)/launch/smb_msf_graph.launch" />
+
+      <!-- Node 4: Object detection -->
+      <include file="$(find object_detection)/launch/object_detection.launch">
+            <arg name="object_detection_classes" value="[11,24,25,39,74]"/>
+      </include>
+      <!-- object classes
+       11: stop sign
+       24: backpack
+       25: umbrella
+       39: bottle
+       74: clock
+      -->
+
+      <!-- Node 5: Low level planner -->
+      <include file="$(find smb_navigation)/launch/navigate2d_cmu.launch">
+            <arg name="use_msf" value="true"/>
+            <arg name="global_frame" value="world_graph_msf"/>
+            <arg name="state_estimation_topic" value="/transformed_odom"/>
+            <arg name="launch_far_planner" value="false"/>
+      </include>
+
+      <!-- Node 6: TARE planner -->
+      <include file="$(find smb_exploration)/launch/cmu/smb_rss_tare.launch">
+            <arg name="rviz" value="false"/>
+      </include>
+</launch>
