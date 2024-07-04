@@ -13,6 +13,9 @@ class RssStateMachine:
         self.rate = rospy.Rate(10)  # 10hz
         self.tare_timeout_thres = rospy.Duration.from_sec(20)  # seconds
 
+        self.planner_state_publisher = rospy.Publisher(
+            "planner_state", String, queue_size=10)
+
         # Topic names
         self.tare_waypoint_topic = "/sensor_coverage_planner/tare_planner/way_point"
         self.tare_waypoint_sub = rospy.Subscriber(
@@ -44,6 +47,7 @@ class RssStateMachine:
             self.waypoint_mux_publish()
             self.far_goal_pub()
             self.check_tare_timeout()
+            self.planner_state_publisher.publish(self.state)
             self.rate.sleep()
 
     def far_waypoint_cb(self, msg):
