@@ -21,18 +21,17 @@
 
       <!-- Node 4: Object detection -->
       <include file="$(find object_detection)/launch/object_detection.launch" if="$(arg sim)" >
-            <arg name="object_detection_classes" value="[0,11,24,25,39,74]"/>
+            <arg name="object_detection_classes" value="[11,24,25,74]"/>
             <arg name="gpu" value="off"/>
-      </include>
+            </include>
       <include file="$(find object_detection)/launch/object_detection.launch" unless="$(arg sim)" >
-            <arg name="object_detection_classes" value="[0,11,24,25,39,74]"/>
+            <arg name="object_detection_classes" value="[11,24,25,74]"/>
             <arg name="gpu" value="on"/>
       </include>
       <!-- object classes
        11: stop sign
        24: backpack
        25: umbrella
-       39: bottle
        74: clock
       -->
 
