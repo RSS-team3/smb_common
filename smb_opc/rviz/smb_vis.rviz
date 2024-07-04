@@ -1,6 +1,6 @@
 Panels:
   - Class: rviz/Displays
-    Help Height: 70
+    Help Height: 0
     Name: Displays
     Property Tree Widget:
       Expanded:
@@ -9,14 +9,13 @@ Panels:
         - /Robot1/Sensors1/Lidar Raw1
         - /SLAM1/Map1
         - /SLAM1/Map1/Autocompute Value Bounds1
-        - /LocalPlanner1
         - /LocalPlanner1/TerrainMap1
-        - /FarPlanner1
         - /FarPlanner1/GoalPoint1/Namespaces1
         - /FarPlanner1/GlobalGraph1
-        - /TarePlanner1
+        - /TF1/Frames1
+        - /PointStamped1
       Splitter Ratio: 0.5111420750617981
-    Tree Height: 770
+    Tree Height: 744
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -36,7 +35,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: Lidar Raw
+    SyncSource: Map
   - Class: rviz/ControlPanel
     Name: ControlPanel
 Preferences:
@@ -85,8 +84,8 @@ Visualization Manager:
             - Alpha: 1
               Autocompute Intensity Bounds: true
               Autocompute Value Bounds:
-                Max Value: 1.5905910730361938
-                Min Value: -1.1293858289718628
+                Max Value: 0.3049226999282837
+                Min Value: -0.5250267386436462
                 Value: true
               Axis: Z
               Channel Name: intensity
@@ -110,7 +109,7 @@ Visualization Manager:
               Use Fixed Frame: true
               Use rainbow: true
               Value: true
-          Enabled: true
+          Enabled: false
           Name: Sensors
         - Class: rviz/Group
           Displays:
@@ -121,56 +120,6 @@ Visualization Manager:
               Frame Timeout: 15
               Frames:
                 All Enabled: true
-                LF_WHEEL:
-                  Value: true
-                LH_WHEEL:
-                  Value: true
-                RF_WHEEL:
-                  Value: true
-                RH_WHEEL:
-                  Value: true
-                base_inertia:
-                  Value: true
-                base_link:
-                  Value: true
-                camera:
-                  Value: true
-                imu:
-                  Value: true
-                imu_link:
-                  Value: true
-                lidar_mount_link:
-                  Value: true
-                map_o3d:
-                  Value: true
-                map_o3d_graph_msf_aligned:
-                  Value: true
-                map_o3d_viz:
-                  Value: true
-                odom_graph_msf:
-                  Value: true
-                odom_o3d:
-                  Value: true
-                raw_rs_o3d:
-                  Value: true
-                rgb_camera_link:
-                  Value: true
-                rgb_camera_optical_link:
-                  Value: true
-                rslidar:
-                  Value: true
-                rslidar_base_link:
-                  Value: true
-                sensor:
-                  Value: true
-                sensor_at_scan:
-                  Value: true
-                top:
-                  Value: true
-                vehicle:
-                  Value: true
-                world_graph_msf:
-                  Value: true
               Marker Alpha: 1
               Marker Scale: 1
               Name: TF
@@ -178,46 +127,7 @@ Visualization Manager:
               Show Axes: true
               Show Names: true
               Tree:
-                base_link:
-                  LF_WHEEL:
-                    {}
-                  LH_WHEEL:
-                    {}
-                  RF_WHEEL:
-                    {}
-                  RH_WHEEL:
-                    {}
-                  base_inertia:
-                    {}
-                  imu_link:
-                    imu:
-                      {}
-                  lidar_mount_link:
-                    rslidar_base_link:
-                      rslidar:
-                        map_o3d:
-                          map_o3d_viz:
-                            {}
-                          raw_rs_o3d:
-                            {}
-                        odom_o3d:
-                          {}
-                        sensor:
-                          camera:
-                            {}
-                          vehicle:
-                            {}
-                  odom_graph_msf:
-                    world_graph_msf:
-                      map_o3d_graph_msf_aligned:
-                        {}
-                      sensor_at_scan:
-                        {}
-                  rgb_camera_link:
-                    rgb_camera_optical_link:
-                      {}
-                  top:
-                    {}
+                {}
               Update Interval: 0
               Value: true
             - Alpha: 1
@@ -229,73 +139,7 @@ Visualization Manager:
                 Expand Joint Details: false
                 Expand Link Details: false
                 Expand Tree: false
-                LF_WHEEL:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                  Value: true
-                LH_WHEEL:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                  Value: true
                 Link Tree Style: Links in Alphabetic Order
-                RF_WHEEL:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                  Value: true
-                RH_WHEEL:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                  Value: true
-                base_inertia:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                base_link:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                  Value: true
-                imu:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                imu_link:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                  Value: true
-                lidar_mount_link:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                  Value: true
-                rgb_camera_link:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                  Value: true
-                rgb_camera_optical_link:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                rslidar:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                rslidar_base_link:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                  Value: true
-                top:
-                  Alpha: 1
-                  Show Axes: false
-                  Show Trail: false
-                  Value: true
               Name: RobotModel
               Robot Description: smb_description
               TF Prefix: ""
@@ -304,7 +148,7 @@ Visualization Manager:
               Visual Enabled: true
           Enabled: true
           Name: Description
-      Enabled: true
+      Enabled: false
       Name: Robot
     - Class: rviz/Group
       Displays:
@@ -574,7 +418,7 @@ Visualization Manager:
           Topic: /graph_msf/est_odometry_odom_imu
           Unreliable: false
           Value: true
-      Enabled: true
+      Enabled: false
       Name: StateEstimation
     - Class: rviz/Group
       Displays:
@@ -641,7 +485,7 @@ Visualization Manager:
           Transport Hint: raw
           Unreliable: false
           Value: false
-      Enabled: true
+      Enabled: false
       Name: Object Detection
     - Class: rviz/Group
       Displays:
@@ -706,14 +550,14 @@ Visualization Manager:
         - Alpha: 1
           Class: rviz/PointStamped
           Color: 204; 41; 204
-          Enabled: true
+          Enabled: false
           History Length: 1
           Name: WayPoint
           Queue Size: 10
           Radius: 1
           Topic: /way_point
           Unreliable: false
-          Value: true
+          Value: false
         - Alpha: 1
           Autocompute Intensity Bounds: false
           Autocompute Value Bounds:
@@ -798,7 +642,7 @@ Visualization Manager:
           Topic: /path
           Unreliable: false
           Value: true
-      Enabled: true
+      Enabled: false
       Name: LocalPlanner
     - Class: rviz/Group
       Displays:
@@ -893,7 +737,7 @@ Visualization Manager:
             {}
           Queue Size: 100
           Value: true
-      Enabled: true
+      Enabled: false
       Name: FarPlanner
     - Class: rviz/Group
       Displays:
@@ -934,7 +778,7 @@ Visualization Manager:
           Marker Topic: /sensor_coverage_planner/tare_visualizer/exploring_subspaces
           Name: ExplorationSubspaces
           Namespaces:
-            "": true
+            {}
           Queue Size: 100
           Value: true
         - Alpha: 1
@@ -1010,7 +854,7 @@ Visualization Manager:
           Queue Size: 10
           Selectable: true
           Size (Pixels): 3
-          Size (m): 1
+          Size (m): 0.20000000298023224
           Style: Spheres
           Topic: /sensor_coverage_planner/selected_viewpoint_vis_cloud
           Unreliable: false
@@ -1019,11 +863,179 @@ Visualization Manager:
           Value: true
       Enabled: true
       Name: TarePlanner
+    - Alpha: 0.20000000298023224
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 0; 0
+      Min Color: 85; 255; 0
+      Name: Floor explored
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.4000000059604645
+      Style: Flat Squares
+      Topic: /sensor_coverage_planner/viewpoint_vis_cloud
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: false
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: Wall explored
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.10000000149011612
+      Style: Flat Squares
+      Topic: /sensor_coverage_planner/planner_cloud
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Filter (blacklist): ""
+      Filter (whitelist): ""
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        LF_WHEEL:
+          Value: false
+        LH_WHEEL:
+          Value: false
+        RF_WHEEL:
+          Value: false
+        RH_WHEEL:
+          Value: false
+        base_inertia:
+          Value: false
+        base_link:
+          Value: true
+        camera:
+          Value: true
+        imu:
+          Value: false
+        imu_link:
+          Value: false
+        lidar_mount_link:
+          Value: false
+        map_o3d:
+          Value: true
+        map_o3d_graph_msf_aligned:
+          Value: false
+        odom:
+          Value: false
+        odom_graph_msf:
+          Value: true
+        raw_rs_o3d:
+          Value: false
+        rgb_camera_link:
+          Value: true
+        rgb_camera_optical_link:
+          Value: false
+        rslidar:
+          Value: false
+        rslidar_base_link:
+          Value: false
+        sensor:
+          Value: false
+        sensor_at_scan:
+          Value: false
+        top:
+          Value: false
+        vehicle:
+          Value: false
+        world_graph_msf:
+          Value: false
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        odom:
+          base_link:
+            LF_WHEEL:
+              {}
+            LH_WHEEL:
+              {}
+            RF_WHEEL:
+              {}
+            RH_WHEEL:
+              {}
+            base_inertia:
+              {}
+            imu_link:
+              imu:
+                {}
+            lidar_mount_link:
+              rslidar_base_link:
+                rslidar:
+                  map_o3d:
+                    raw_rs_o3d:
+                      {}
+                  sensor:
+                    camera:
+                      {}
+                    vehicle:
+                      {}
+            odom_graph_msf:
+              world_graph_msf:
+                map_o3d_graph_msf_aligned:
+                  {}
+                sensor_at_scan:
+                  {}
+            rgb_camera_link:
+              rgb_camera_optical_link:
+                {}
+            top:
+              {}
+      Update Interval: 0
+      Value: true
+    - Alpha: 1
+      Class: rviz/PointStamped
+      Color: 204; 41; 204
+      Enabled: true
+      History Length: 1
+      Name: PointStamped
+      Queue Size: 10
+      Radius: 0.20000000298023224
+      Topic: /clicked_point
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: world_graph_msf
     Frame Rate: 30
   Name: root
   Tools:
@@ -1051,7 +1063,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 46.70221710205078
+      Distance: 18.1198673248291
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -1059,29 +1071,29 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 1.7170408964157104
-        Y: -3.2570488452911377
-        Z: 8.846016883850098
+        X: 2.49562668800354
+        Y: -1.0779976844787598
+        Z: -1.0719870328903198
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7397965788841248
+      Pitch: 0.6597970724105835
       Target Frame: <Fixed Frame>
-      Yaw: 3.385552406311035
+      Yaw: 2.270554542541504
     Saved: ~
 Window Geometry:
   ControlPanel:
     collapsed: false
   Displays:
     collapsed: false
-  Height: 1536
+  Height: 1016
   Hide Left Dock: false
   Hide Right Dock: true
   Image bounding Boxes:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000002d000000542fc020000000afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afc0000003d000003a2000000fb0100001cfa000000010100000002fb000000180043006f006e00740072006f006c00500061006e0065006c0100000000ffffffff000000d200fffffffb000000100044006900730070006c0061007900730100000000000001ea0000015600fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000001a0053004d00420050006f007700650072004d006f0074006f007201000003e5000000b70000007300fffffffb0000001e0053004d00420050006f007700650072005000610079006c006f0061006401000004a2000000dd0000007300ffffff00000001000001c3000003b9fc0200000005fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000003b9000000a400fffffffb0000001200520061007700200049006d00610067006500000003a20000019a0000001600fffffffb000000280049006d00610067006500200062006f0075006e00640069006e006700200042006f007800650073000000032b000002110000001600fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000070f0000005efc0100000002fb0000000800540069006d006501000000000000070f000003bc00fffffffb0000000800540069006d00650100000000000004500000000000000000000004390000054200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000002d00000033efc020000000afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000b0fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afc0000003b0000033e000000ed0100001afa000000010100000002fb000000180043006f006e00740072006f006c00500061006e0065006c0100000000ffffffff000000bf00fffffffb000000100044006900730070006c0061007900730100000000000001ea0000015600fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000001a0053004d00420050006f007700650072004d006f0074006f0072000000028e000000700000006d00fffffffb0000001e0053004d00420050006f007700650072005000610079006c006f006100640000000304000000750000006d00ffffff00000001000001c3000003b9fc0200000005fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000003b9000000a000fffffffb0000001200520061007700200049006d00610067006500000003a20000019a0000001600fffffffb000000280049006d00610067006500200062006f0075006e00640069006e006700200042006f007800650073000000032b000002110000001600fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000007380000005efc0100000002fb0000000800540069006d00650100000000000007380000030700fffffffb0000000800540069006d00650100000000000004500000000000000000000004620000033e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Raw Image:
     collapsed: false
   SMBPowerMotor:
@@ -1096,6 +1108,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: true
-  Width: 1807
-  X: 0
+  Width: 1848
+  X: 72
   Y: 27

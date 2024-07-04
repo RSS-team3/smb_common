@@ -11,7 +11,7 @@ class RssStateMachine:
         # Start with idle mode, receives nothing and do not publish anything
         self.state = "tare"
         self.rate = rospy.Rate(10)  # 10hz
-        self.tare_timeout_thres = rospy.Duration.from_sec(20)  # seconds
+        self.tare_timeout_thres = rospy.Duration.from_sec(600)  # seconds
 
         self.planner_state_publisher = rospy.Publisher(
             "planner_state", String, queue_size=10)
