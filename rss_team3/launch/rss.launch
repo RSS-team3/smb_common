@@ -1,13 +1,16 @@
 <launch>
       <!-- Node 1: Main process -->
-      <include file="$(find smb)/launch/smb.launch" />
+      <!-- <include file="$(find smb)/launch/smb.launch" /> -->
+      <include file="$(find smb_gazebo)/launch/sim.launch" />
 
       <!-- Node 2: Custom node!!! TBA -->
       <node pkg="smb" type="rss_state_machine.py" name="RssStateMachine">
       </node>
       
       <!-- Node 3: SLAM -->
-      <include file="$(find smb_msf_graph)/launch/smb_msf_graph.launch" />
+      <include file="$(find smb_msf_graph)/launch/smb_msf_graph.launch">
+            <arg name="use_sim_time" value="true"/>
+      </include>
 
       <!-- Node 4: Object detection -->
       <include file="$(find object_detection)/launch/object_detection.launch">

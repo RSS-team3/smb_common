@@ -81,7 +81,7 @@ class RssStateMachine:
         # elif self.state == "tare":
         point = PointStamped()
         point.header.stamp = rospy.Time.now()
-        point.header.frame_id = "/map_o3d"
+        point.header.frame_id = "/map"
         point.point.x = 0.0
         point.point.y = 0.0
         point.point.z = 0.0
