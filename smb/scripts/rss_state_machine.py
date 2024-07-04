@@ -81,10 +81,10 @@ class RssStateMachine:
         # elif self.state == "tare":
         point = PointStamped()
         point.header.stamp = rospy.Time.now()
-        point.header.frame_id = "/map"
+        point.header.frame_id = "/world_graph_msf"
         point.point.x = 0.0
         point.point.y = 0.0
-        point.point.z = 0.0
+        point.point.z = 0.5
         self.far_goal_publisher.publish(point)
 
     def check_tare_timeout(self):
